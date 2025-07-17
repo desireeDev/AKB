@@ -7,7 +7,7 @@ import Expert from '../Expert'
 import Packs from '../Packs'
 const Cook = () => {
   return (
-    <section className='relative' id='aboutus'>
+    <section className='relative' id='packs-services'>
       <div className='container px-4'>
 
         {/* Ton image à droite */}

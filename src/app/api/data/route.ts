@@ -9,7 +9,7 @@ import { FullMenuType } from '@/app/types/fullmenu'
 import { PackType } from '@/app/types/packs'
 
 const HeaderData: HeaderItem[] = [
-  { label: ' Packs & Services ', href: '/#aboutus' },
+  { label: ' Packs & Services ', href: '/#packs-services' },
   { label: 'Produits', href: '/#menu' },
   { label: 'fixer RDV', href: '/#reserve' },
   { label: 'Contact', href: '/documentation' },
