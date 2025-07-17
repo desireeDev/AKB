@@ -24,7 +24,7 @@ const Footer: FC = () => {
   }, [])
 
   return (
-    <footer className='pt-12 bg-white'>
+    <footer className='pt-12 bg-sky-100 p-4'>
       <div className='container mx-auto px-4'>
         <div className='grid grid-cols-1 sm:grid-cols-6 lg:gap-20 md:gap-24 sm:gap-12 gap-12 pb-10'>
           {/* Logo & Description */}

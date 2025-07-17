@@ -14,7 +14,6 @@
   --radius-Newsletter: 30px 400px 30px 30px;
 }
 
-
 /*
   The default border color has changed to `currentcolor` in Tailwind CSS v4,
   so we've added these compatibility styles to make sure everything still
@@ -32,18 +31,21 @@
     border-color: var(--color-gray-200, currentcolor);
   }
 
+  body {
+    @apply bg-sky-100; /* Fond bleu ciel */
+  }
+
   section {
     @apply py-10;
   }
 
   h1 {
-    @apply text-black md:text-7xl sm:text-6xl text-5xl
+    @apply text-black md:text-7xl sm:text-6xl text-5xl;
   }
 
   h2 {
-    @apply text-black font-semibold sm:text-5xl text-4xl sm:leading-14 leading-11
+    @apply text-black font-semibold sm:text-5xl text-4xl sm:leading-14 leading-11;
   }
-  
 }
 
 @layer utilities {
