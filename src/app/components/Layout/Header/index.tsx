@@ -132,13 +132,13 @@ const Header: React.FC = () => {
                 </div>
               </div>
             )}
-            <button
+           {/*  <button
               className='hidden lg:block bg-primary duration-300 text-white hover:bg-primary/15 hover:text-primary font-medium text-lg py-2 px-6 rounded-full hover:cursor-pointer'
               onClick={() => {
                 setIsSignUpOpen(true)
               }}>
               Inscription
-            </button>
+            </button> */}
             {isSignUpOpen && (
               <div className='fixed top-0 left-0 w-full h-full bg-black/50 flex items-center justify-center z-50'>
                 <div

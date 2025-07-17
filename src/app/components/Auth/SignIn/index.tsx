@@ -42,17 +42,17 @@ const Signin = () => {
         </div>
       </form>
 
-      <Link
+     {/*  <Link
         href='/'
         className='mb-2 inline-block text-base text-black hover:text-primary hover:underline'>
         Mot de passe oublié ?
-      </Link>
-      <p className='text-black text-base'>
+      </Link> */}
+     {/*  <p className='text-black text-base'>
         Pas encore inscrit ?{' '}
         <Link href='/' className='text-primary hover:underline'>
           Créer un compte
         </Link>
-      </p>
+      </p> */}
     </>
   )
 }

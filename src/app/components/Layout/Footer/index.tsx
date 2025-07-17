@@ -104,10 +104,10 @@ const Footer: FC = () => {
                   className='text-blue-600 text-2xl inline-block mr-2'
                 />
                 <p className='text-black text-base'>
-                  12 Rue de la Lavande, 75015 Paris
+                  Yopougon Complexe Picasso
                 </p>
               </div>
-              <Link href='tel:+33123456789'>
+              <Link href='tel:+2250504460670'>
                 <div className='flex items-center hover:text-blue-600 transition'>
                   <Icon
                     icon='solar:phone-bold'
@@ -137,16 +137,16 @@ const Footer: FC = () => {
             © 2025 - Mon Pressing. Tous droits réservés.
           </p>
           <div className='flex flex-wrap gap-4'>
-            <Link
+            {/* <Link
               href='/privacy'
               className='text-sm text-black/70 hover:text-blue-600 hover:underline'>
               Politique de confidentialité
-            </Link>
-            <Link
+            </Link> */}
+            {/* <Link
               href='/terms'
               className='text-sm text-black/70 hover:text-blue-600 hover:underline'>
               Conditions générales
-            </Link>
+            </Link> */}
           </div>
         </div>
       </div>

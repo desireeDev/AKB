@@ -34,7 +34,7 @@ const Features = () => {
             Pourquoi nous choisir
           </p>
           <h2 className='font-semibold lg:max-w-60% mx-auto mt-3'>
-               Bien plus qu’un simple pressing
+            L’art du soin textile, au quotidien 
           </h2>
         </div>
         <div className='grid sm:grid-cols-2 lg:grid-cols-4 gap-y-28 gap-x-6 mt-24'>
@@ -50,7 +50,7 @@ const Features = () => {
                     <Image
                       src={items.imgSrc}
                       alt={items.imgSrc}
-                      width={510}
+                      width={410}
                       height={10}
                     />
                   </div>

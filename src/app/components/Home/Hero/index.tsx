@@ -9,10 +9,10 @@ const Hero = () => {
         <div className='grid grid-cols-1 lg:grid-cols-12 items-center'>
           <div className='lg:col-span-6'>
             <h1 className='font-semibold mb-5 text-black lg:text-start text-center sm:leading-20 leading-16'>
-             L’Art du Linge Propre 
+             L’Art du Propre 
             </h1>
             <p className='text-black/55 text-lg font-normal mb-10 lg:text-start text-center'>
-              Confiez-nous vos vêtements : nettoyage soigné, traitement écologique et finition irréprochable. Vos tissus méritent le meilleur — chaque jour.
+             Confiez-nous vos vêtements et votre linge de maison : entretien soigné, traitement écologique et propreté garantie. Chez AGI, chaque tissu mérite le meilleur — au quotidien.
             </p>
             <div className='flex flex-col sm:flex-row gap-5 items-center justify-center lg:justify-start'>
               <Link href='/#menu'>

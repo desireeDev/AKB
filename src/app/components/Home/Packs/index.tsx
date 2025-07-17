@@ -1,30 +1,32 @@
 'use client'
+
 import Slider from 'react-slick'
 import React, { useEffect, useState } from 'react'
 import Image from 'next/image'
 import 'slick-carousel/slick/slick.css'
 import 'slick-carousel/slick/slick-theme.css'
-import { ExpertChiefType } from '@/app/types/expertchief'
-import ChiefDetailSkeleton from '../../Skeleton/ChiefDetail'
+import { PackType } from '@/app/types/packs'
+import PacksSkeleton from '../../Skeleton/PacksSkeleton'
 
-const Expert = () => {
-  const [chiefDetail, setChiefDetail] = useState<ExpertChiefType[]>([])
+const Packs = () => {
+  const [packs, setPacks] = useState<PackType[]>([])
   const [loading, setLoading] = useState(true)
 
   useEffect(() => {
-    const fetchData = async () => {
+    const fetchPacks = async () => {
       try {
         const res = await fetch('/api/data')
-        if (!res.ok) throw new Error('Failed to fetch')
+        if (!res.ok) throw new Error('Failed to fetch packs')
         const data = await res.json()
-        setChiefDetail(data.ExpertChiefData)
+        setPacks(data.PacksData)
       } catch (error) {
-        console.error('Error fetching services:', error)
+        console.error('Error fetching packs:', error)
       } finally {
         setLoading(false)
       }
     }
-    fetchData()
+
+    fetchPacks()
   }, [])
 
   const settings = {
@@ -39,66 +41,52 @@ const Expert = () => {
     responsive: [
       {
         breakpoint: 1200,
-        settings: {
-          slidesToShow: 3,
-        },
+        settings: { slidesToShow: 3 },
       },
       {
         breakpoint: 800,
-        settings: {
-          slidesToShow: 2,
-        },
+        settings: { slidesToShow: 2 },
       },
       {
         breakpoint: 450,
-        settings: {
-          slidesToShow: 1,
-        },
+        settings: { slidesToShow: 1 },
       },
     ],
   }
 
   return (
-    <section className='bg-primary/10'>
+    <section className='bg-primary/5'>
       <div className='container'>
         <div className='text-center'>
-          {/* <p className='text-primary text-lg font-normal mb-3 tracking-widest uppercase'>
-            Our Chefs
-          </p> */}
-          <h2>Nos Services de Pressing</h2>
+          <h2>Nos Packs</h2>
         </div>
         <Slider {...settings}>
           {loading
             ? Array.from({ length: 3 }).map((_, i) => (
-                <ChiefDetailSkeleton key={i} />
+                <PacksSkeleton key={i} />
               ))
-            : chiefDetail.map((items, i) => (
+            : packs.map((pack, i) => (
                 <div key={i}>
                   <div className='m-3 my-10 p-10 text-center backdrop-blur-md bg-white/50 rounded-3xl'>
                     <div className='relative'>
                       <Image
-                        src={items.imgSrc}
-                        alt='gaby'
+                        src={pack.imgSrc}
+                        alt={pack.name}
                         width={362}
                         height={262}
                         className='inline-block m-auto w-auto'
                       />
-                      {/* <div className='absolute top-[75%] -right-[10%]'>
-                        <Image
-                          src={'/images/Expert/Linkedin.svg'}
-                          alt='linkedin'
-                          width={220}
-                          height={120}
-                        />
-                      </div> */}
                     </div>
                     <div className='mt-16'>
                       <h3 className='text-2xl font-semibold text-black'>
-                        {items.name}
+                        {pack.name}
                       </h3>
                       <h4 className='text-lg font-normal text-black/50 opacity-50'>
-                        {items.profession}
+                        {pack.description}
                       </h4>
+                      <p className='text-primary text-xl font-bold mt-4'>
+                        {pack.price}€
+                      </p>
                     </div>
                   </div>
                 </div>
@@ -106,8 +94,7 @@ const Expert = () => {
         </Slider>
       </div>
     </section>
-    
   )
 }
 
-export default Expert
+export default Packs

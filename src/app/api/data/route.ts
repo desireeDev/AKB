@@ -6,38 +6,40 @@ import { ExpertChiefType } from '@/app/types/expertchief'
 import { GalleryImagesType } from '@/app/types/galleryimage'
 import { FooterLinkType } from '@/app/types/footerlink'
 import { FullMenuType } from '@/app/types/fullmenu'
+import { PackType } from '@/app/types/packs'
 
 const HeaderData: HeaderItem[] = [
-  { label: 'Services', href: '/#aboutus' },
+  { label: ' Packs & Services ', href: '/#aboutus' },
   { label: 'Produits', href: '/#menu' },
-  { label: 'Prendre Rendez-vous', href: '/#reserve' },
+  { label: 'fixer RDV', href: '/#reserve' },
   { label: 'Contact', href: '/documentation' },
+  
 ]
 
 const FeaturesData: FeaturesType[] = [
   {
-    imgSrc: '/images/Features/featureOne.svg',
-    heading: 'Soin Premium des Textiles',
+    imgSrc: '/images/Features/featureFour.svg',
+    heading: 'Pressing Domestique & Industriel',
     subheading:
-      'Nous traitons vos vêtements avec des produits de qualité et des machines de dernière génération pour un résultat impeccable.',
+      'Nous assurons un entretien soigné de tous vos vêtements, linges de maison et articles professionnels, que vous soyez un particulier ou une entreprise.',
   },
   {
-    imgSrc: '/images/Features/featureTwo.svg',
-    heading: 'Service Express',
+    imgSrc: '/images/Features/featureFour.svg',
+    heading: 'Nettoyage Complet des Locaux',
     subheading:
-      'Déposez vos vêtements le matin, récupérez-les propres et frais le jour même grâce à notre pressing rapide.',
-  },
-  {
-    imgSrc: '/images/Features/featureThree.svg',
-    heading: 'Écologique & Responsable',
-    subheading:
-      'Nous utilisons des méthodes de nettoyage respectueuses de l’environnement pour préserver vos tissus et la planète.',
+      'En plus du linge, AGI s’occupe du nettoyage de maisons, appartements, bureaux et autres espaces professionnels.',
   },
   {
     imgSrc: '/images/Features/featureFour.svg',
     heading: 'Collecte & Livraison',
     subheading:
-      'Profitez de notre service de collecte et livraison à domicile pour un confort maximum, sans vous déplacer.',
+      'Bénéficiez de notre service pratique de collecte et de livraison à domicile ou sur site, pour un confort absolu.',
+  },
+  {
+    imgSrc: '/images/Features/featureFour.svg',
+    heading: 'Respect de l’Environnement',
+    subheading:
+      'Nous utilisons des méthodes et produits écologiques pour préserver vos affaires et la planète.',
   },
 ]
 
@@ -70,6 +72,38 @@ const ExpertChiefData: ExpertChiefType[] = [
   },
 ]
 
+
+// Données des packs
+const PacksData: PackType[] = [
+  {
+    name: 'Pack Solo',
+    description: '10 vêtements/semaine, 40 vêtements/mois, 1 couette/mois',
+    clothesPerWeek: 10,
+    clothesPerMonth: 40,
+    couettesPerMonth: 1,
+    price: 13000,
+    imgSrc: '/images/packs/solo.png',
+  },
+  {
+    name: 'Pack Couple',
+    description: '20 vêtements/semaine, 80 vêtements/mois, 2 couettes/mois',
+    clothesPerWeek: 20,
+    clothesPerMonth: 80,
+    couettesPerMonth: 2,
+    price: 25000,
+    imgSrc: '/images/packs/couple.png',
+  },
+  {
+    name: 'Pack Family',
+    description: '35 vêtements/semaine, 140 vêtements/mois, 4 couettes/mois',
+    clothesPerWeek: 35,
+    clothesPerMonth: 140,
+    couettesPerMonth: 4,
+    price: 35000,
+    imgSrc: '/images/packs/family.png',
+  },
+];
+// Données des images de la galerie
 const GalleryImagesData: GalleryImagesType[] = [
   {
     src: '/images/Gallery/machine.png',
@@ -134,7 +168,7 @@ const FullMenuData: FullMenuType[] = [
 
 const FooterLinkData: FooterLinkType[] = [
   {
-    section: 'AKB Pressing',
+    section: 'Agathe Groupe International',
     links: [
       { label: 'Accueil', href: '/' },
       { label: 'Nos services', href: '/#aboutus' },
@@ -150,6 +184,7 @@ export const GET = () => {
     HeaderData,
     FeaturesData,
     ExpertChiefData,
+    PacksData,
     GalleryImagesData,
     FullMenuData,
     FooterLinkData,

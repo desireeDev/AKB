@@ -70,13 +70,13 @@ const Gallery = () => {
                       </p>
                       <div className='flex items-center justify-between w-full'>
                         <p className='text-white lg:text-2xl text-xl'>
-                          $ {item.price}
+                          F {item.price}
                         </p>
-                        <Link
+                        {/* <Link
                           href='#'
                           className='text-white rounded-full bg-primary border duration-300 border-primary py-2 lg:px-6 md:px-4 px-3 hover:bg-primary/40 hover:backdrop-blur-xs md:text-base text-sm'>
                           Voir plus
-                        </Link>
+                        </Link> */}
                       </div>
                     </div>
                   </div>

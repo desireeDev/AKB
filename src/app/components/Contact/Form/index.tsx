@@ -103,11 +103,11 @@ const ContactForm = () => {
   return (
     <section id='reserve' className='scroll-mt-20 py-12 bg-gray-50'>
       <div className='container mx-auto px-6 max-w-5xl'>
-        <p className='text-primary text-lg font-semibold mb-3 tracking-widest uppercase text-center'>
+        {/* <p className='text-primary text-lg font-semibold mb-3 tracking-widest uppercase text-center'>
           Dépôt Pressing
-        </p>
+        </p> */}
         <h2 className='mb-10 text-4xl font-extrabold tracking-tight text-center text-gray-900'>
-          Déposez vos vêtements
+       Fixer un rendez-vous
         </h2>
         <div className='relative rounded-3xl shadow-lg bg-white p-10'>
           <form onSubmit={handleSubmit} className='flex flex-col gap-8'>
@@ -123,7 +123,7 @@ const ContactForm = () => {
                   name='fullname'
                   value={formData.fullname}
                   onChange={handleChange}
-                  placeholder='Jean Dupont'
+                  placeholder='Agatha Groupe Inter'
                   className='w-full text-base px-4 py-3 rounded-2xl border border-gray-300 focus:border-primary focus:ring-2 focus:ring-primary focus:outline-none transition'
                   required
                 />
@@ -138,7 +138,7 @@ const ContactForm = () => {
                   name='email'
                   value={formData.email}
                   onChange={handleChange}
-                  placeholder='jean.dupont@example.com'
+                  placeholder='agathagroupeinter24@gmail.com'
                   className='w-full text-base px-4 py-3 rounded-2xl border border-gray-300 focus:border-primary focus:ring-2 focus:ring-primary focus:outline-none transition'
                   required
                 />
@@ -151,7 +151,7 @@ const ContactForm = () => {
                   id='Phnumber'
                   type='tel'
                   name='phnumber'
-                  placeholder='+33612345678'
+                  placeholder='+2250504460670'
                   value={formData.phnumber}
                   onChange={handleChange}
                   className='w-full text-base px-4 py-3 rounded-2xl border border-gray-300 focus:border-primary focus:ring-2 focus:ring-primary focus:outline-none transition'
@@ -175,9 +175,8 @@ const ContactForm = () => {
                   required
                 >
                   <option value=''>Choisir le point de dépôt</option>
-                  <option value='Paris Centre'>Paris Centre</option>
-                  <option value='Lyon Part-Dieu'>Lyon Part-Dieu</option>
-                  <option value='Marseille Vieux Port'>Marseille Vieux Port</option>
+                  <option value='Yop'>Yopougon Complexe picasso</option>
+                  <option value='Yop'>Selmer</option>
                 </select>
               </div>
               <div className='flex-1 flex flex-col mt-6 sm:mt-0'>

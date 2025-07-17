@@ -8,7 +8,7 @@ import Newsletter from '@/app/components/Home/Newsletter'
 import { Metadata } from 'next'
 import ContactForm from './components/Contact/Form'
 export const metadata: Metadata = {
-  title: 'Kitchen',
+  title: 'AGI',
 }
 
 export default function Home() {
@@ -20,7 +20,7 @@ export default function Home() {
       <Expert />
       <Gallery />
       <ContactForm />
-      <Newsletter />
+      {/* <Newsletter /> */}
     </main>
   )
 }

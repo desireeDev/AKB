@@ -84,7 +84,7 @@ export const Configuration = () => {
               name='lastName'
               value={formData.lastName}
               onChange={handleChange}
-              placeholder='Dupont'
+              placeholder='Agathe Groupe Inter'
               className='w-full px-4 py-2.5 border border-blue-300 rounded-lg focus:border-blue-600 focus:outline-none'
             />
           </div>
@@ -120,7 +120,7 @@ export const Configuration = () => {
             name='email'
             value={formData.email}
             onChange={handleChange}
-            placeholder='jean.dupont@email.com'
+            placeholder='agathagroupinter.@email.com'
             className='w-full px-4 py-2.5 border border-blue-300 rounded-lg focus:border-blue-600 focus:outline-none'
           />
         </div>
@@ -137,7 +137,7 @@ export const Configuration = () => {
           ></textarea>
         </div>
 
-        <div className='flex items-center gap-2'>
+       {/*  <div className='flex items-center gap-2'>
           <input
             type='checkbox'
             name='newsletter'
@@ -148,7 +148,7 @@ export const Configuration = () => {
           <label className='text-base text-black'>
             J'accepte de m'inscrire à la newsletter
           </label>
-        </div>
+        </div> */}
 
         <div className='flex items-start gap-2'>
           <input
