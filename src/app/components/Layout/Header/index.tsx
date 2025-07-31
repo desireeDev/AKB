@@ -20,7 +20,7 @@ const Header: React.FC = () => {
 
   const navbarRef = useRef<HTMLDivElement>(null)
   const signInRef = useRef<HTMLDivElement>(null)
-  const signUpRef = useRef<HTMLDivElement>(null)
+
   const mobileMenuRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
@@ -48,10 +48,7 @@ const Header: React.FC = () => {
     ) {
       setIsSignInOpen(false)
     }
-    if (
-      signUpRef.current &&
-      !signUpRef.current.contains(event.target as Node)
-    ) {
+    {
       setIsSignUpOpen(false)
     }
     if (
@@ -78,7 +75,7 @@ const Header: React.FC = () => {
     } else {
       document.body.style.overflow = ''
     }
-  }, [isSignInOpen, isSignUpOpen, navbarOpen])
+  }, [isSignInOpen, navbarOpen])
 
   return (
     <header
@@ -140,26 +137,7 @@ const Header: React.FC = () => {
               }}>
               Inscription
             </button> */}
-            {isSignUpOpen && (
-              <div className='fixed top-0 left-0 w-full h-full bg-black/50 flex items-center justify-center z-50'>
-                <div
-                  ref={signUpRef}
-                  className='relative mx-auto w-full max-w-md overflow-hidden rounded-lg bg-dark_grey/90 bg-white backdrop-blur-md px-8 pt-14 pb-8 text-center'>
-                  <button
-                    onClick={() => setIsSignUpOpen(false)}
-                    className='absolute top-0 right-0 mr-4 mt-8 hover:cursor-pointer'
-                    aria-label='Close Sign Up Modal'>
-                    <Icon
-                      icon='material-symbols:close-rounded'
-                      width={24}
-                      height={24}
-                      className='text-black hover:text-primary text-24 inline-block me-2'
-                    />
-                  </button>
-                  <SignUp />
-                </div>
-              </div>
-            )}
+           
             <button
               onClick={() => setNavbarOpen(!navbarOpen)}
               className='block lg:hidden p-2 rounded-lg'
