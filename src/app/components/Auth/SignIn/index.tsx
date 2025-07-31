@@ -34,11 +34,13 @@ const Signin = () => {
           />
         </div>
         <div className='mb-9'>
-          <button
-            type='submit'
-            className='bg-primary w-full py-3 rounded-lg text-18 font-medium border text-white border-primary hover:text-primary hover:bg-transparent hover:cursor-pointer transition duration-300 ease-in-out'>
-            Se connecter
-          </button>
+         <button
+  type='submit'
+  className='bg-emerald-500 w-full py-3 rounded-lg text-18 font-medium border text-white border-emerald-500 hover:text-emerald-500 hover:bg-transparent hover:cursor-pointer transition duration-300 ease-in-out'>
+  Se connecter
+</button>
+
+
         </div>
       </form>
 

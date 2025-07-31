@@ -101,7 +101,7 @@ const ContactForm = () => {
   }
 
   return (
-    <section id='reserve' className='scroll-mt-20 py-12 bg-sky-100 p-4'>
+    <section id='reserve' className='scroll-mt-20 py-12 bg-green-200 p-4'>
       <div className='container mx-auto px-6 max-w-5xl'>
         {/* <p className='text-primary text-lg font-semibold mb-3 tracking-widest uppercase text-center'>
           Dépôt Pressing

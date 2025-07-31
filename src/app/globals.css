@@ -32,7 +32,14 @@
   }
 
   body {
-    @apply bg-sky-100; /* Fond bleu ciel */
+  @apply bg-lime-400;
+
+    /* @apply bg-emerald-400;*/
+   /* Fond bleu pure or normal */
+
+    /* @apply bg-teal-300;*/
+     
+     
   }
 
   section {

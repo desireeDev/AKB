@@ -4,9 +4,14 @@ import Features from '@/app/components/Home/Features'
 import Cook from '@/app/components/Home/Cook'
 import Expert from '@/app/components/Home/Expert'
 import Gallery from '@/app/components/Home/Gallery'
-import Newsletter from '@/app/components/Home/Newsletter'
+import Presentation from './components/Home/Presentation'
+import NettoyageIndustriel from './components/Home/NettoyageIn'
+import NettoyageDomestique from './components/Home/NettoyageD'
+import Packs from './components/Home/Packs'
+
 import { Metadata } from 'next'
 import ContactForm from './components/Contact/Form'
+import Demande from './components/Home/Demande'
 export const metadata: Metadata = {
   title: 'AGI',
 }
@@ -17,9 +22,22 @@ export default function Home() {
       <Hero />
       <Features />
       <Cook />
+      <Packs />
+      {/* Uncomment the following line if you want to include the Gallery component */}
+      {/* <Gallery /> */}
+      
       <Expert />
-      <Gallery />
-      <ContactForm />
+    
+      <Presentation />
+      <NettoyageIndustriel />
+      <NettoyageDomestique />
+
+     {/* <Gallery /> */}
+     
+    
+      {/* <ContactForm /> */}
+      <Demande />
+     
       {/* <Newsletter /> */}
     </main>
   )

@@ -9,10 +9,23 @@ import { FullMenuType } from '@/app/types/fullmenu'
 import { PackType } from '@/app/types/packs'
 
 const HeaderData: HeaderItem[] = [
-  { label: ' Packs & Services ', href: '/#packs-services' },
-  { label: 'Produits', href: '/#menu' },
-  { label: 'fixer RDV', href: '/#reserve' },
-  { label: 'Contact', href: '/documentation' },
+  { label: ' Pressing ',
+     submenu: [
+      { label: 'A propos', href: '/#about' },
+      { label: 'Packs', href: '/#packs' },
+      { label: 'Services', href: '/#services_pressing' },
+    ],
+     },
+  { label: 'Nettoyage', 
+     submenu: [
+      { label: 'Présentation', href: '/#présentation', },
+      { label: 'Nettoyage Industriel', href: '/#nettoyageI', },
+      { label: 'Nettoyage Domestique', href: '/#nettoyage_domestique', },
+    ],
+    
+   },
+  { label: 'Prestation à la demande', href: '/#prestation' },
+  //{ label: 'Contact', href: '/documentation' },
   
 ]
 
@@ -103,29 +116,7 @@ const PacksData: PackType[] = [
     imgSrc: '/images/packs/family.png',
   },
 ];
-// Données des images de la galerie
-const GalleryImagesData: GalleryImagesType[] = [
-  {
-    src: '/images/Gallery/machine.png',
-    name: 'Machines à laver professionnelles',
-    price: 35,
-  },
-  {
-    src: '/images/Gallery/fer.png',
-    name: 'Presses et tables à repasser vapeur',
-    price: 17,
-  },
-  {
-    src: '/images/Gallery/Lessive.png',
-    name: 'Lessive en poudre',
-    price: 45,
-  },
-  {
-    src: '/images/Gallery/Liquide.png',
-    name: 'Lessive Liquide',
-    price: 27,
-  },
-]
+
 
 const FullMenuData: FullMenuType[] = [
   {
@@ -185,7 +176,7 @@ export const GET = () => {
     FeaturesData,
     ExpertChiefData,
     PacksData,
-    GalleryImagesData,
+ 
     FullMenuData,
     FooterLinkData,
   })

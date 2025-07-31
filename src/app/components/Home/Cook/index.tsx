@@ -3,11 +3,10 @@
 import Image from 'next/image'
 // import Expert from '@/components/Home/Expert'
 // Update the import path below if the file exists elsewhere:
-import Expert from '../Expert'
 import Packs from '../Packs'
 const Cook = () => {
   return (
-    <section className='relative' id='packs-services'>
+    <section className='relative' id='about'>
       <div className='container px-4'>
 
         {/* Ton image à droite */}
@@ -31,7 +30,7 @@ const Cook = () => {
           </div>
           <div className='lg:col-span-6 flex flex-col justify-center items-center lg:items-start'>
             <p className='text-primary text-lg font-normal mb-3 tracking-widest uppercase lg:text-start text-center'>
-              Nos Packs et Services
+              A propos
             </p>
             <h2 className='lg:text-start text-center'>
               Des Vêtements Impeccables, Des Services Sur Mesure
@@ -52,7 +51,7 @@ const Cook = () => {
 
         {/* 🔥 AJOUTE TES SLIDERS ICI */}
     
-        <Packs />
+     
 
       </div>
     </section>

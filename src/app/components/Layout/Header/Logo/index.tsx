@@ -12,7 +12,7 @@ const Logo: React.FC = () => {
         className='w-fit'
         quality={100}
       /> */}
-      <p className='text-blue-700 text-2xl font-semibold '> AGATHA GROUP INTERNATIONAL</p>
+      <p className='text-emerald-900 text-2xl font-bold '> AGATHA GROUP INTERNATIONAL</p>
     </Link>
   )
 }

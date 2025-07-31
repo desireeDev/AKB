@@ -68,9 +68,10 @@ const SignUp = () => {
 
       <p className='text-body-secondary text-black/60 text-base'>
         Vous avez déjà un compte ?
-        <Link href='/' className='pl-2 text-primary hover:underline'>
-          Se connecter
-        </Link>
+       <Link href='/' className='pl-2 text-cyan-700 hover:underline hover:text-cyan-500'>
+  Se connecter
+</Link>
+
       </p>
     </>
   )

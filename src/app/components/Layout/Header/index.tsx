@@ -106,12 +106,13 @@ const Header: React.FC = () => {
               +1(909) 235-9814
             </Link> */}
             <button
-              className='hidden lg:block text-primary duration-300 bg-primary/15 hover:text-white hover:bg-primary font-medium text-lg py-2 px-6 rounded-full hover:cursor-pointer'
-              onClick={() => {
-                setIsSignInOpen(true)
-              }}>
-              Connexion
-            </button>
+             className='hidden lg:block text-emerald-700 duration-300 bg-emerald-100 hover:text-white hover:bg-emerald-600 font-medium text-lg py-2 px-6 rounded-full hover:cursor-pointer'
+             onClick={() => {
+            setIsSignInOpen(true)
+   }}>
+  Connexion
+</button>
+
             {isSignInOpen && (
               <div className='fixed top-0 left-0 w-full h-full bg-black/50 flex items-center justify-center z-50'>
                 <div

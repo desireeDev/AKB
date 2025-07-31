@@ -1,4 +1,5 @@
 'use client'
+
 import Slider from 'react-slick'
 import React, { useEffect, useState } from 'react'
 import Image from 'next/image'
@@ -59,54 +60,42 @@ const Expert = () => {
   }
 
   return (
-    <section className='bg-primary/10'>
-      <div className='container'>
-        <div className='text-center'>
-          {/* <p className='text-primary text-lg font-normal mb-3 tracking-widest uppercase'>
-            Our Chefs
-          </p> */}
-          <h2>Nos Services de Pressing</h2>
+    <section id="services_pressing" className="py-16 bg-[#e8f5f8]">
+      <div className="container mx-auto px-4">
+        <div className="text-center mb-12">
+          <h2 className="text-4xl font-bold mb-4 text-emerald-500">Nos Services de Pressing</h2>
+          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+            Confiez-nous vos vêtements pour un entretien irréprochable grâce à notre expertise.
+          </p>
         </div>
+
         <Slider {...settings}>
           {loading
             ? Array.from({ length: 3 }).map((_, i) => (
                 <ChiefDetailSkeleton key={i} />
               ))
             : chiefDetail.map((items, i) => (
-                <div key={i}>
-                  <div className='m-3 my-10 p-10 text-center backdrop-blur-md bg-white/50 rounded-3xl'>
-                    <div className='relative'>
+                <div key={i} className="p-4">
+                  <div className="bg-white rounded-xl shadow p-6 flex flex-col justify-between text-center hover:shadow-lg transition">
+                    <div className="relative w-full h-48 mb-6 overflow-hidden rounded-lg">
                       <Image
                         src={items.imgSrc}
-                        alt='gaby'
-                        width={362}
-                        height={262}
-                        className='inline-block m-auto w-auto'
+                        alt={items.name}
+                        fill
+                        className="object-cover"
                       />
-                      {/* <div className='absolute top-[75%] -right-[10%]'>
-                        <Image
-                          src={'/images/Expert/Linkedin.svg'}
-                          alt='linkedin'
-                          width={220}
-                          height={120}
-                        />
-                      </div> */}
                     </div>
-                    <div className='mt-16'>
-                      <h3 className='text-2xl font-semibold text-black'>
-                        {items.name}
-                      </h3>
-                      <h4 className='text-lg font-normal text-black/50 opacity-50'>
-                        {items.profession}
-                      </h4>
-                    </div>
+                    <h3 className="text-xl font-semibold mb-2">{items.name}</h3>
+                    <p className="text-gray-600 mb-4">{items.profession}</p>
+                    <button className="px-4 py-2 bg-emerald-200 text-black rounded-full hover:bg-emerald-300 transition">
+                      Réserver
+                    </button>
                   </div>
                 </div>
               ))}
         </Slider>
       </div>
     </section>
-    
   )
 }
 
