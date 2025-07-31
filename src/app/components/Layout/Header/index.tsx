@@ -6,7 +6,7 @@ import Logo from './Logo'
 import HeaderLink from './Navigation/HeaderLink'
 import MobileHeaderLink from './Navigation/MobileHeaderLink'
 import Signin from '@/app/components/Auth/SignIn'
-import SignUp from '@/app/components/Auth/SignUp'
+
 import { Icon } from '@iconify/react/dist/iconify.js'
 import { HeaderItem } from '@/app/types/menu'
 
@@ -93,15 +93,7 @@ const Header: React.FC = () => {
             ))}
           </nav>
           <div className='flex items-center gap-2 lg:gap-3'>
-            {/* <Link
-              href='#'
-              className='text-lg font-medium hover:text-primary hidden xl:block'>
-              <Icon
-                icon='solar:phone-bold'
-                className='text-primary text-3xl lg:text-2xl inline-block me-2'
-              />
-              +1(909) 235-9814
-            </Link> */}
+          
             <button
              className='hidden lg:block text-emerald-700 duration-300 bg-emerald-100 hover:text-white hover:bg-emerald-600 font-medium text-lg py-2 px-6 rounded-full hover:cursor-pointer'
              onClick={() => {
@@ -173,15 +165,7 @@ const Header: React.FC = () => {
               />
             </button>
           </div>
-          {/* <Link
-            href='#'
-            className='text-lg font-medium hover:text-primary block md:hidden mt-6 p-4'>
-            <Icon
-              icon='solar:phone-bold'
-              className='text-primary text-3xl lg:text-2xl inline-block me-2'
-            />
-            +1(909) 235-9814
-          </Link> */}
+         
           <nav className='flex flex-col items-start p-4'>
             {headerLink.map((item, index) => (
               <MobileHeaderLink key={index} item={item} />
@@ -194,14 +178,7 @@ const Header: React.FC = () => {
                   setNavbarOpen(false)
                 }}>
 Connexion              </button>
-            {/*   <button
-                className='bg-primary text-white px-4 py-2 rounded-lg border  border-primary hover:text-primary hover:bg-transparent hover:cursor-pointer transition duration-300 ease-in-out'
-                onClick={() => {
-                  setIsSignUpOpen(true)
-                  setNavbarOpen(false)
-                }}>
-                Sign Up
-              </button> */}
+          
             </div>
           </nav>
         </div>

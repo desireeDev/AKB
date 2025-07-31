@@ -1,6 +1,6 @@
-'use client'
+/* 'use client'
 import Link from 'next/link'
-import SocialSignUp from '../SocialSignUp'
+
 import Logo from '@/app/components/Layout/Header/Logo'
 
 const SignUp = () => {
@@ -78,3 +78,4 @@ const SignUp = () => {
 }
 
 export default SignUp
+ */
