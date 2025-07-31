@@ -1,4 +1,4 @@
-import SignUp from '@/app/components/Auth/SignUp'
+/* import SignUp from '@/app/components/Auth/SignUp'
 import Breadcrumb from '@/app/components/Common/Breadcrumb'
 import { Metadata } from 'next'
 
@@ -17,3 +17,4 @@ const SignupPage = () => {
 }
 
 export default SignupPage
+ */

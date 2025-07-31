@@ -1,4 +1,4 @@
-import React from 'react'
+/* import React from 'react'
 
 const SocialSignUp = () => {
   return (
@@ -63,3 +63,4 @@ const SocialSignUp = () => {
 }
 
 export default SocialSignUp
+ */
