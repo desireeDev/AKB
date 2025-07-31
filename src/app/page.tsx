@@ -3,7 +3,7 @@ import Hero from '@/app/components/Home/Hero'
 import Features from '@/app/components/Home/Features'
 import Cook from '@/app/components/Home/Cook'
 import Expert from '@/app/components/Home/Expert'
-import Gallery from '@/app/components/Home/Gallery'
+
 import Presentation from './components/Home/Presentation'
 import NettoyageIndustriel from './components/Home/NettoyageIn'
 import NettoyageDomestique from './components/Home/NettoyageD'
