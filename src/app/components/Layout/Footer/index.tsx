@@ -31,8 +31,7 @@ const Footer: FC = () => {
           <div className='col-span-2'>
             <Logo />
             <p className='text-sm font-medium text-gray-600 my-5 max-w-[90%]'>
-              Votre pressing de confiance : un linge impeccable, un service
-              rapide et éco-responsable.
+              Expert en pressing, nettoyage industriel et prestations à la demande, offrant un service rapide, écologique et personnalisé pour tous vos besoins.
             </p>
             <div className='flex gap-4 items-center'>
               <Link
@@ -46,28 +45,7 @@ const Footer: FC = () => {
                   className='text-blue-600 group-hover:text-white'
                 />
               </Link>
-              <Link
-                href='#'
-                aria-label='Instagram'
-                className='group bg-white border border-blue-600 hover:bg-blue-600 rounded-full shadow p-3 transition'>
-                <Icon
-                  icon='fa6-brands:instagram'
-                  width='16'
-                  height='16'
-                  className='text-blue-600 group-hover:text-white'
-                />
-              </Link>
-              <Link
-                href='#'
-                aria-label='Twitter'
-                className='group bg-white border border-blue-600 hover:bg-blue-600 rounded-full shadow p-3 transition'>
-                <Icon
-                  icon='fa6-brands:x-twitter'
-                  width='16'
-                  height='16'
-                  className='text-blue-600 group-hover:text-white'
-                />
-              </Link>
+            
             </div>
           </div>
 
@@ -113,7 +91,7 @@ const Footer: FC = () => {
                     icon='solar:phone-bold'
                     className='text-blue-600 text-2xl inline-block mr-2'
                   />
-                  <p className='text-black text-base'>+33 1 23 45 67 89</p>
+                  <p className='text-black text-base'>+225 1 23 45 67 89</p>
                 </div>
               </Link>
               <Link href='mailto:contact@monpressing.fr'>
@@ -123,7 +101,7 @@ const Footer: FC = () => {
                     className='text-blue-600 text-2xl inline-block mr-2'
                   />
                   <p className='text-black text-base'>
-                    contact@monpressing.fr
+                    contact@agi.ci
                   </p>
                 </div>
               </Link>

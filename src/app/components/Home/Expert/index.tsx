@@ -60,7 +60,7 @@ const Expert = () => {
   }
 
   return (
-    <section id="services_pressing" className="py-16 bg-[#e8f5f8]">
+    <section id="services_pressing" className="py-16 bg-emerald-200">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
           <h2 className="text-4xl font-bold mb-4 text-emerald-500">Nos Services de Pressing</h2>
@@ -69,31 +69,33 @@ const Expert = () => {
           </p>
         </div>
 
-        <Slider {...settings}>
-          {loading
-            ? Array.from({ length: 3 }).map((_, i) => (
-                <ChiefDetailSkeleton key={i} />
-              ))
-            : chiefDetail.map((items, i) => (
-                <div key={i} className="p-4">
-                  <div className="bg-white rounded-xl shadow p-6 flex flex-col justify-between text-center hover:shadow-lg transition">
-                    <div className="relative w-full h-48 mb-6 overflow-hidden rounded-lg">
-                      <Image
-                        src={items.imgSrc}
-                        alt={items.name}
-                        fill
-                        className="object-cover"
-                      />
+        <div className="bg-white rounded-2xl p-8 shadow-lg">
+          <Slider {...settings}>
+            {loading
+              ? Array.from({ length: 3 }).map((_, i) => (
+                  <ChiefDetailSkeleton key={i} />
+                ))
+              : chiefDetail.map((items, i) => (
+                  <div key={i} className="p-4">
+                    <div className="bg-emerald-100 rounded-xl shadow p-6 flex flex-col justify-between text-center hover:shadow-lg transition">
+                      <div className="relative w-full h-48 mb-6 overflow-hidden rounded-lg">
+                        <Image
+                          src={items.imgSrc}
+                          alt={items.name}
+                          fill
+                          className="object-cover"
+                        />
+                      </div>
+                      <h3 className="text-xl font-semibold mb-2 text-emerald-800">{items.name}</h3>
+                      <p className="text-emerald-900 mb-4">{items.profession}</p>
+                      <button className="px-4 py-2 bg-emerald-500 text-white rounded-full hover:bg-emerald-600 transition">
+                        Réserver
+                      </button>
                     </div>
-                    <h3 className="text-xl font-semibold mb-2">{items.name}</h3>
-                    <p className="text-gray-600 mb-4">{items.profession}</p>
-                    <button className="px-4 py-2 bg-emerald-200 text-black rounded-full hover:bg-emerald-300 transition">
-                      Réserver
-                    </button>
                   </div>
-                </div>
-              ))}
-        </Slider>
+                ))}
+          </Slider>
+        </div>
       </div>
     </section>
   )

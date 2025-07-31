@@ -48,7 +48,7 @@ const Packs = () => {
   }
 
   return (
-    <section id="packs" className="py-16 bg-[#e8f5f8]">
+    <section id="packs" className="bg-emerald-200">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
           <h2 className="text-4xl font-bold mb-4 text-emerald-500">Nos Packs</h2>
@@ -57,35 +57,38 @@ const Packs = () => {
           </p>
         </div>
 
-        <Slider {...settings}>
-          {loading
-            ? Array.from({ length: 3 }).map((_, i) => (
-                <PacksSkeleton key={i} />
-              ))
-            : packs.map((pack, i) => (
-                <div key={i} className="p-4">
-                  <div className="bg-white rounded-xl shadow p-6 flex flex-col justify-between hover:shadow-lg transition text-center">
-                    <div className="relative w-full h-48 mb-6 overflow-hidden rounded-lg">
-                      <Image
-                        src={pack.imgSrc}
-                        alt={pack.name}
-                        fill
-                        className="object-cover"
-                      />
+        {/* Container blanc autour du slider */}
+        <div className="bg-white rounded-2xl p-8 shadow-lg">
+          <Slider {...settings}>
+            {loading
+              ? Array.from({ length: 3 }).map((_, i) => (
+                  <PacksSkeleton key={i} />
+                ))
+              : packs.map((pack, i) => (
+                  <div key={i} className="p-4">
+                    <div className="bg-emerald-100 rounded-xl shadow p-6 flex flex-col justify-between hover:shadow-lg transition text-center">
+                      <div className="relative w-full h-48 mb-6 overflow-hidden rounded-lg">
+                        <Image
+                          src={pack.imgSrc}
+                          alt={pack.name}
+                          fill
+                          className="object-cover"
+                        />
+                      </div>
+                      <h3 className="text-xl font-semibold mb-2 text-emerald-800">{pack.name}</h3>
+                      <p className="text-emerald-900 mb-2">{pack.description}</p>
+                      <p className="text-emerald-700 text-xl font-bold mb-4">{pack.price}F</p>
+                      <button
+                        className="px-4 py-2 bg-emerald-500 text-white rounded-full hover:bg-emerald-600 transition"
+                        onClick={() => setSelectedPack(pack)}
+                      >
+                        Choisir
+                      </button>
                     </div>
-                    <h3 className="text-xl font-semibold mb-2">{pack.name}</h3>
-                    <p className="text-gray-600 mb-2">{pack.description}</p>
-                    <p className="text-emerald-300 text-xl font-bold mb-4 ">{pack.price}F</p>
-                    <button
-                      className="px-4 py-2 bg-emerald-200 text-black rounded-full hover:bg-emerald-300 transition"
-                      onClick={() => setSelectedPack(pack)}
-                    >
-                      Choisir
-                    </button>
                   </div>
-                </div>
-              ))}
-        </Slider>
+                ))}
+          </Slider>
+        </div>
       </div>
 
       {/* ✅ Modal réutilisé */}
