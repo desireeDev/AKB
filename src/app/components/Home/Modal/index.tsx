@@ -13,6 +13,7 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose, selectedService }) => {
     prenom: '',
     email: '',
     telephone: '',
+    dateReservation: '', // nouveau champ ajouté
     message: '',
     service: selectedService || ''
   })
@@ -38,6 +39,7 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose, selectedService }) => {
       prenom: '',
       email: '',
       telephone: '',
+      dateReservation: '',
       message: '',
       service: ''
     })
@@ -111,6 +113,15 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose, selectedService }) => {
                 <option value="Aide à la personne">Aide à la personne</option>
                 <option value="Livraison & Courses">Livraison & Courses</option>
               </select>
+              {/* Champ date de réservation */}
+              <input
+                type="date"
+                name="dateReservation"
+                value={formData.dateReservation}
+                onChange={handleChange}
+                className="w-full border border-gray-300 rounded px-3 py-2"
+                required
+              />
               <textarea
                 name="message"
                 placeholder="Message"
@@ -131,7 +142,7 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose, selectedService }) => {
           <div className="text-center">
             <h3 className="text-xl font-bold mb-4">✅ Réservation Confirmée !</h3>
             <p className="text-gray-600 mb-4">
-              Merci {formData.prenom} {formData.nom}, votre réservation pour le service <strong>{formData.service}</strong> a bien été enregistrée !
+              Merci {formData.prenom} {formData.nom}, votre réservation pour le service <strong>{formData.service}</strong> le <strong>{formData.dateReservation}</strong> a bien été enregistrée !
             </p>
             <button
               onClick={closeModal}

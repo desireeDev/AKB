@@ -1,6 +1,6 @@
 'use client'
 import Link from 'next/link'
-import SocialSignIn from '../SocialSignIn'
+
 import Logo from '@/app/components/Layout/Header/Logo'
 
 const Signin = () => {
@@ -9,14 +9,11 @@ const Signin = () => {
       <div className='mb-10 text-center mx-auto inline-block'>
         <Logo />
       </div>
-
-      <SocialSignIn />
-
-      <span className='z-1 relative my-8 block text-center before:absolute before:h-px before:w-[40%] before:bg-black/20 before:left-0 before:top-3 after:absolute after:h-px after:w-[40%] after:bg-black/20 after:top-3 after:right-0'>
-        <span className='text-body-secondary relative z-10 inline-block px-3 text-base text-black'>
-          OU
-        </span>
-      </span>
+     <span className="block my-8 text-center">
+  <span className="relative inline-block px-3 text-lg font-bold text-emerald-600">
+    Connexion
+  </span>
+</span>
 
       <form onSubmit={(e) => e.preventDefault()}>
         <div className='mb-[22px]'>

@@ -1,28 +1,47 @@
 'use client'
+
 import { Icon } from '@iconify/react'
+import { useState } from 'react'
+import ServiceModal from '../../ServiceModal'
 
 const services = [
   {
     title: 'Remise en état',
-    description: 'Nettoyage complet après travaux, sinistre ou déménagement pour remettre vos espaces en parfait état.',
+    description: 'Nettoyage complet après travaux, sinistre ou déménagement.',
     icon: 'mdi:home',
-    cta: 'Réserver'
+    cta: 'Réserver',
+    key: 'remise'
   },
   {
     title: 'Nettoyage Fin de Chantier',
-    description: 'Service spécialisé pour rendre vos locaux propres et habitables après des travaux de construction ou de rénovation.',
+    description: 'Rendez vos locaux propres après des travaux.',
     icon: 'mdi:hammer-screwdriver',
-    cta: 'Réserver'
+    cta: 'Réserver',
+    key: 'chantier'
   },
   {
     title: 'Nos Abonnements',
-    description: 'Des formules de nettoyage régulier pour votre maison ou appartement, adaptées à votre rythme de vie.',
+    description: 'Formules régulières adaptées à votre rythme.',
     icon: 'mdi:calendar-check',
-    cta: 'Choisir'
+    cta: 'Choisir',
+    key: 'abonnement'
   }
 ]
 
 export default function NettoyageDomestique() {
+  const [modalOpen, setModalOpen] = useState(false)
+  const [selectedService, setSelectedService] = useState<string | null>(null)
+
+  const openModal = (key: string) => {
+    setSelectedService(key)
+    setModalOpen(true)
+  }
+
+  const closeModal = () => {
+    setModalOpen(false)
+    setSelectedService(null)
+  }
+
   return (
     <section id="nettoyage_domestique" className="py-16 bg-emerald-200">
       <div className="container mx-auto px-4">
@@ -39,8 +58,6 @@ export default function NettoyageDomestique() {
               <div
                 key={index}
                 className="bg-emerald-100 rounded-xl shadow p-6 flex flex-col justify-between"
-                data-aos="fade-up"
-                data-aos-duration="800"
               >
                 <div className="flex items-start gap-4 mb-4">
                   <div className="p-3 bg-emerald-300 rounded-full">
@@ -52,7 +69,10 @@ export default function NettoyageDomestique() {
                   </div>
                 </div>
                 <div className="flex items-center justify-between mt-auto">
-                  <button className="px-4 py-2 bg-emerald-500 text-white rounded-full hover:bg-emerald-600 transition">
+                  <button
+                    onClick={() => openModal(item.key)}
+                    className="px-4 py-2 bg-emerald-500 text-white rounded-full hover:bg-emerald-600 transition"
+                  >
                     {item.cta}
                   </button>
                   <Icon icon="tabler:link" className="text-emerald-600" width={24} height={24} />
@@ -62,6 +82,8 @@ export default function NettoyageDomestique() {
           </div>
         </div>
       </div>
+
+      <ServiceModal isOpen={modalOpen} onClose={closeModal} serviceKey={selectedService} />
     </section>
   )
 }

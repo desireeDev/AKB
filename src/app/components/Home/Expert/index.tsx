@@ -7,10 +7,15 @@ import 'slick-carousel/slick/slick.css'
 import 'slick-carousel/slick/slick-theme.css'
 import { ExpertChiefType } from '@/app/types/expertchief'
 import ChiefDetailSkeleton from '../../Skeleton/ChiefDetail'
+import GenericFormModal from '../../GenericFormModal'
 
 const Expert = () => {
   const [chiefDetail, setChiefDetail] = useState<ExpertChiefType[]>([])
   const [loading, setLoading] = useState(true)
+
+  const [openModal, setOpenModal] = useState(false)
+  const [modalTitle, setModalTitle] = useState('')
+  const [modalFields, setModalFields] = useState<any[]>([])
 
   useEffect(() => {
     const fetchData = async () => {
@@ -38,25 +43,25 @@ const Expert = () => {
     speed: 500,
     cssEase: 'linear',
     responsive: [
-      {
-        breakpoint: 1200,
-        settings: {
-          slidesToShow: 3,
-        },
-      },
-      {
-        breakpoint: 800,
-        settings: {
-          slidesToShow: 2,
-        },
-      },
-      {
-        breakpoint: 450,
-        settings: {
-          slidesToShow: 1,
-        },
-      },
+      { breakpoint: 1200, settings: { slidesToShow: 3 } },
+      { breakpoint: 800, settings: { slidesToShow: 2 } },
+      { breakpoint: 450, settings: { slidesToShow: 1 } },
     ],
+  }
+
+  const handleReserve = (serviceName: string) => {
+    setModalTitle(`Réservation - ${serviceName}`)
+
+    // Tu peux adapter dynamiquement les champs par service ici
+    const fields = [
+      { name: 'name', label: 'Nom', type: 'text', required: true },
+      { name: 'email', label: 'Email', type: 'email', required: true },
+      { name: 'items', label: 'Articles à nettoyer', type: 'textarea' },
+      { name: 'instructions', label: 'Instructions spéciales', type: 'textarea' },
+    ]
+
+    setModalFields(fields)
+    setOpenModal(true)
   }
 
   return (
@@ -75,20 +80,23 @@ const Expert = () => {
               ? Array.from({ length: 3 }).map((_, i) => (
                   <ChiefDetailSkeleton key={i} />
                 ))
-              : chiefDetail.map((items, i) => (
+              : chiefDetail.map((item, i) => (
                   <div key={i} className="p-4">
                     <div className="bg-emerald-100 rounded-xl shadow p-6 flex flex-col justify-between text-center hover:shadow-lg transition">
                       <div className="relative w-full h-48 mb-6 overflow-hidden rounded-lg">
                         <Image
-                          src={items.imgSrc}
-                          alt={items.name}
+                          src={item.imgSrc}
+                          alt={item.name}
                           fill
                           className="object-cover"
                         />
                       </div>
-                      <h3 className="text-xl font-semibold mb-2 text-emerald-800">{items.name}</h3>
-                      <p className="text-emerald-900 mb-4">{items.profession}</p>
-                      <button className="px-4 py-2 bg-emerald-500 text-white rounded-full hover:bg-emerald-600 transition">
+                      <h3 className="text-xl font-semibold mb-2 text-emerald-800">{item.name}</h3>
+                      <p className="text-emerald-900 mb-4">{item.profession}</p>
+                      <button
+                        onClick={() => handleReserve(item.name)}
+                        className="px-4 py-2 bg-emerald-500 text-white rounded-full hover:bg-emerald-600 transition"
+                      >
                         Réserver
                       </button>
                     </div>
@@ -96,6 +104,14 @@ const Expert = () => {
                 ))}
           </Slider>
         </div>
+
+        {openModal && (
+          <GenericFormModal
+            title={modalTitle}
+            fields={modalFields}
+            onClose={() => setOpenModal(false)}
+          />
+        )}
       </div>
     </section>
   )

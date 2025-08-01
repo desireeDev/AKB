@@ -80,7 +80,7 @@ const ExpertChiefData: ExpertChiefType[] = [
   },
   {
     profession: 'Nettoyages Spéciaux.',
-    name: 'Entretien des rideaux',
+    name: 'Entretien des  vêtements délicats',
     imgSrc: '/images/Expert/boyone.png',
   },
 ]

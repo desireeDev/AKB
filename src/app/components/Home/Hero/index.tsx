@@ -17,7 +17,7 @@ const Hero = () => {
             <div className='flex flex-col sm:flex-row gap-5 items-center justify-center lg:justify-start'>
               <Link href='/#présentation'>
              <button className='text-xl font-medium rounded-full text-cyan-700 py-3 px-8 bg-cyan-100 hover:text-white border border-cyan-400 hover:bg-cyan-500 hover:cursor-pointer transition ease-in-out duration-300'>
-  Voir plus
+  Télécharger l'application mobile
 </button>
 
 
